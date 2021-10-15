@@ -11,6 +11,10 @@ double _refWidth = 375;
 
 double? _scalingFactor;
 double? _width;
+int? _xs;
+int? _sm;
+int? _md;
+int? _lg;
 
 void initScaling(BuildContext context) {
   var mq = MediaQuery.of(context);
@@ -18,6 +22,13 @@ void initScaling(BuildContext context) {
   _scalingFactor = _width! / _refWidth;
 
   print("width => $_width");
+}
+
+void customSizes({int xs = 576, int sm = 768, int md = 992, int lg = 1200}){
+  _xs = xs;
+  _sm = sm;
+  _md = md;
+  _lg = lg;
 }
 
 double scale(double dimension) {
@@ -41,13 +52,13 @@ _GridTier _currentSize(BuildContext context) {
 //  print(
 //      "INFO orientation: ${mediaQueryData.orientation} , width: ${mediaQueryData.size.width}, height: ${mediaQueryData.size.height}");
 
-  if (width < 576) {
+  if (width < _xs) {
     return _GridTier.xs;
-  } else if (width < 768) {
+  } else if (width < _sm) {
     return _GridTier.sm;
-  } else if (width < 992) {
+  } else if (width < _md) {
     return _GridTier.md;
-  } else if (width < 1200) {
+  } else if (width < _lg) {
     return _GridTier.lg;
   } else {
     // width >= 1200
