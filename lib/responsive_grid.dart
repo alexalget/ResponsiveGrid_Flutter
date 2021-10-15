@@ -11,10 +11,10 @@ double _refWidth = 375;
 
 double? _scalingFactor;
 double? _width;
-int? _xs;
-int? _sm;
-int? _md;
-int? _lg;
+int _xs = 576;
+int _sm = 768;
+int _md = 992;
+int _lg = 1200;
 
 void initScaling(BuildContext context) {
   var mq = MediaQuery.of(context);
