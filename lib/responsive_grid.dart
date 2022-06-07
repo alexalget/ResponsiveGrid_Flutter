@@ -24,7 +24,7 @@ void initScaling(BuildContext context) {
   print("width => $_width");
 }
 
-void customSizes({int xs = 576, int sm = 768, int md = 992, int lg = 1200}){
+void customSizes({int xs = 325, int sm = 576, int md = 768, int lg = 999}){
   _xs = xs;
   _sm = sm;
   _md = md;
